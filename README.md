@@ -8,13 +8,13 @@ The link is baked directly into the image — no redirect servers, no subscripti
 With [pipx](https://pipx.pypa.io/) (recommended):
 
 ```sh
-pipx install git+https://github.com/<username>/qrgenproject.git
+pipx install git+https://github.com/PRITESH-95/qrgen.git
 ```
 
 Or with pip:
 
 ```sh
-pip install git+https://github.com/<username>/qrgenproject.git
+pip install git+https://github.com/PRITESH-95/qrgen.git
 ```
 
 ## Usage
@@ -36,8 +36,8 @@ If the file already exists a numbered suffix (`-1`, `-2`, …) is added automati
 ## Dev setup
 
 ```sh
-git clone https://github.com/<username>/qrgenproject.git
-cd qrgenproject
+git clone https://github.com/PRITESH-95/qrgen.git
+cd qrgen
 python -m venv .venv
 # Windows
 .\.venv\Scripts\Activate.ps1
