@@ -1,57 +1,82 @@
-# Permanent Link QR Generator
+<div align="center">
 
-Generate a **static QR-code PNG** from any link.  
-The link is baked directly into the image — no redirect servers, no subscriptions, no expiry.
+# qrgen
+
+**Turn any link into a permanent, static QR code PNG.**
+The link is baked straight into the image. No redirect servers, no subscriptions, no expiry.
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Interface](https://img.shields.io/badge/Interface-CLI-black)
+
+</div>
+
+---
+
+## Features
+
+- **Static QR codes:** the PNG contains your link itself, so it works forever.
+- **One command:** `qrgen <link>` and the image lands in your Downloads folder.
+- **Installable CLI:** works with `pipx` or `pip`, no manual setup.
+- **Tested:** the `tests/` folder covers the core generator and the CLI.
 
 ## Install
 
 With [pipx](https://pipx.pypa.io/) (recommended):
 
-```sh
+```powershell
 pipx install git+https://github.com/PRITESH-95/qrgen.git
 ```
 
 Or with pip:
 
-```sh
+```powershell
 pip install git+https://github.com/PRITESH-95/qrgen.git
 ```
 
 ## Usage
 
-```sh
+```powershell
 qrgen https://example.com
 ```
 
-The QR-code PNG is saved to your **Downloads** folder by default (`~/Downloads/<domain>-qr.png`).
+The QR code is saved to your **Downloads** folder as `~/Downloads/<domain>-qr.png`.
 
-To pick a specific output path:
+See every option, including choosing your own output path:
 
-```sh
-qrgen https://example.com -o my-code.png
+```powershell
+qrgen --help
 ```
 
-If the file already exists a numbered suffix (`-1`, `-2`, …) is added automatically.
+## Project structure
 
-## Dev setup
+```
+qrgen/
++-- src/qr_generator/
+|   +-- cli.py          # command-line interface
+|   +-- core.py         # QR code generation
+|   +-- __main__.py     # python -m qr_generator
++-- tests/
+|   +-- test_cli.py
+|   +-- test_core.py
++-- pyproject.toml
++-- LICENSE
+```
 
-```sh
+## Development
+
+```powershell
 git clone https://github.com/PRITESH-95/qrgen.git
 cd qrgen
-python -m venv .venv
-# Windows
-.\.venv\Scripts\Activate.ps1
-# macOS / Linux
-# source .venv/bin/activate
-pip install -e ".[dev]"
-```
-
-### Run tests
-
-```sh
+pip install -e .
+pip install pytest
 pytest
 ```
 
+## Built with
+
+Python, [qrcode](https://pypi.org/project/qrcode/) + Pillow, packaged with Hatchling.
+
 ## License
 
-[MIT](LICENSE)
+MIT. See [LICENSE](LICENSE).

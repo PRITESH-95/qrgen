@@ -9,7 +9,7 @@ description = "Generate permanent, static QR-code PNGs from links."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
-authors = [{ name = "Your Name" }]
+authors = [{ name = "Pritesh Shinde" }]
 keywords = ["qr", "qrcode", "generator", "cli"]
 classifiers = [
     "Programming Language :: Python :: 3",
